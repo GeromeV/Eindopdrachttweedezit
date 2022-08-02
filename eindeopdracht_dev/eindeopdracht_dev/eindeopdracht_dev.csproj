@@ -1,0 +1,100 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="img\**" />
+    <EmbeddedResource Remove="img\**" />
+    <None Remove="img\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\B-Park Dampoort.jpg" />
+    <None Remove="Assets\b-park dampoort.png" />
+    <None Remove="Assets\B-Park Gent Sint-Pieters.jpg" />
+    <None Remove="Assets\b-park gent sint-pieters.png" />
+    <None Remove="Assets\Dok noord.jpg" />
+    <None Remove="Assets\dok noord.png" />
+    <None Remove="Assets\Fonts\verdana-bold.ttf" />
+    <None Remove="Assets\Fonts\verdana.ttf" />
+    <None Remove="Assets\map.png" />
+    <None Remove="Assets\Ramen.jpg" />
+    <None Remove="Assets\ramen.png" />
+    <None Remove="Assets\Reep.jpg" />
+    <None Remove="Assets\reep.png" />
+    <None Remove="Assets\Savaanstraat.jpg" />
+    <None Remove="Assets\savaanstraat.png" />
+    <None Remove="Assets\Sint-Michiels.jpg" />
+    <None Remove="Assets\sint-michiels.png" />
+    <None Remove="Assets\Sint-Pietersplein.jpg" />
+    <None Remove="Assets\sint-pietersplein.png" />
+    <None Remove="Assets\stergeel.png" />
+    <None Remove="Assets\sterwit.png" />
+    <None Remove="Assets\Tolhuis.jpg" />
+    <None Remove="Assets\tolhuis.png" />
+    <None Remove="Assets\Vrijdagmarkt.jpg" />
+    <None Remove="Assets\vrijdagmarkt.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\b-park dampoort.png" />
+    <EmbeddedResource Include="Assets\b-park gent sint-pieters.png" />
+    <EmbeddedResource Include="Assets\dok noord.png" />
+    <EmbeddedResource Include="Assets\Fonts\verdana-bold.ttf" />
+    <EmbeddedResource Include="Assets\Fonts\verdana.ttf" />
+    <EmbeddedResource Include="Assets\map.png" />
+    <EmbeddedResource Include="Assets\ramen.png" />
+    <EmbeddedResource Include="Assets\reep.png" />
+    <EmbeddedResource Include="Assets\savaanstraat.png" />
+    <EmbeddedResource Include="Assets\sint-michiels.png" />
+    <EmbeddedResource Include="Assets\sint-pietersplein.png" />
+    <EmbeddedResource Include="Assets\stergeel.png" />
+    <EmbeddedResource Include="Assets\sterwit.png" />
+    <EmbeddedResource Include="Assets\tolhuis.png" />
+    <EmbeddedResource Include="Assets\vrijdagmarkt.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.23.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2244" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="5.0.0.2244" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="views\detailpagefavo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="views\map.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="views\mapalleparkings.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="views\mapfavo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="views\parkingdetails.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="views\parkinglijst.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="REpo\local.settings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+</Project>
