@@ -31,7 +31,7 @@ namespace fa_parkinggent
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = sqlConnection;
-                    cmd.CommandText = "INSERT INTO tblparkign VALUES(@parkingid)";
+                    cmd.CommandText = "INSERT INTO tblparking VALUES(@parkingid)";
                     cmd.Parameters.AddWithValue("@parkingid", registration.parkingid);
 
                     await cmd.ExecuteNonQueryAsync();
@@ -58,7 +58,7 @@ namespace fa_parkinggent
                     using (SqlCommand cmd = new SqlCommand())
                     {
                         cmd.Connection = sqlConnection;
-                        cmd.CommandText = "SELECT * from tblparkign group by parkingid";
+                        cmd.CommandText = "SELECT * from tblparking group by parkingid";
                         var reader = await cmd.ExecuteReaderAsync();
                         
                         while(await reader.ReadAsync())
@@ -108,7 +108,7 @@ namespace fa_parkinggent
                     {
                         cmd.Connection = sqlConnection;
                         cmd.Parameters.AddWithValue("@id",id);
-                        cmd.CommandText = @"DELETE FROM tblParkign WHERE parkingid = @id;";
+                        cmd.CommandText = @"DELETE FROM tblparking WHERE parkingid = @id;";
                         var reader = await cmd.ExecuteReaderAsync();
 
                         while (await reader.ReadAsync())

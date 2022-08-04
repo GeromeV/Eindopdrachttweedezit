@@ -86,7 +86,7 @@ namespace eindopdracht.REpo
             {
                 try
                 {
-                    string url = "https://faparkinggent.azurewebsites.net/api/v1/getparkingid";
+                    string url = "https://parkgent.azurewebsites.net/api/v1/getparkingid";
 
                     string json = await client.GetStringAsync(url);
 
@@ -120,7 +120,7 @@ namespace eindopdracht.REpo
             {
                 try
                 {
-                    string url = "https://faparkinggent.azurewebsites.net/api/v1/getparkingid";
+                    string url = "https://parkgent.azurewebsites.net/api/v1/getparkingid";
 
                     string json = await client.GetStringAsync(url);
 
@@ -147,7 +147,7 @@ namespace eindopdracht.REpo
             {
                 using (HttpClient client = GetClient())
                 {
-                    string url = "https://faparkinggent.azurewebsites.net/api/v1/postparkingid";
+                    string url = "https://parkgent.azurewebsites.net/api/v1/postparkingid";
 
                     string json = JsonConvert.SerializeObject(favo);
 
@@ -175,7 +175,7 @@ namespace eindopdracht.REpo
             {
                 using (HttpClient client = GetClient())
                 {
-                    string url = $"https://faparkinggent.azurewebsites.net/api/v1/deleteparkingid/"+id;
+                    string url = $"https://parkgent.azurewebsites.net/api/v1/deleteparkingid/" +id;
 
 
                     var response = await client.DeleteAsync(url); ;
