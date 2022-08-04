@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eindeopdracht_dev.views.nointernet">
+             
+    <ContentPage.Content>
+        <Grid>
+            <Image
+            Source="\Assets\nointernet.png"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"/>
+            <Label Text="No internet" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20"  FontAttributes="Bold" Grid.Column="1" />
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -25,6 +25,8 @@
     <None Remove="Assets\dok noord.png" />
     <None Remove="Assets\Fonts\verdana-bold.ttf" />
     <None Remove="Assets\Fonts\verdana.ttf" />
+    <None Remove="Assets\getouw.png" />
+    <None Remove="Assets\ledeberg.png" />
     <None Remove="Assets\map.png" />
     <None Remove="Assets\Ramen.jpg" />
     <None Remove="Assets\ramen.png" />
@@ -50,6 +52,8 @@
     <EmbeddedResource Include="Assets\dok noord.png" />
     <EmbeddedResource Include="Assets\Fonts\verdana-bold.ttf" />
     <EmbeddedResource Include="Assets\Fonts\verdana.ttf" />
+    <EmbeddedResource Include="Assets\getouw.png" />
+    <EmbeddedResource Include="Assets\ledeberg.png" />
     <EmbeddedResource Include="Assets\map.png" />
     <EmbeddedResource Include="Assets\ramen.png" />
     <EmbeddedResource Include="Assets\reep.png" />
@@ -65,9 +69,17 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.23.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="UXDivers.GorillaPlayer.SDK" Version="1.5.5" />
+    <PackageReference Include="UXDivers.GorillaPlayer.SDK.AutoConfig" Version="1.5.0-Beta4" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2244" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
     <PackageReference Include="Xamarin.Forms.Maps" Version="5.0.0.2244" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v12.0\Mono.Android.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>
@@ -81,6 +93,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="views\mapfavo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="views\nointernet.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="views\parkingdetails.xaml">

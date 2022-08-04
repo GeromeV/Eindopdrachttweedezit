@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <AzureFunctionsVersion>v4</AzureFunctionsVersion>
@@ -6,6 +6,8 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.0.1" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+    <PackageReference Include="UXDivers.GorillaPlayer.SDK" Version="1.5.5" />
+    <PackageReference Include="UXDivers.GorillaPlayer.SDK.AutoConfig" Version="1.5.0-Beta4" />
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">

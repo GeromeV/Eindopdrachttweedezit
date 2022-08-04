@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using eindeopdracht_dev.Models;
@@ -34,6 +34,11 @@ namespace eindeopdracht_dev.views
 
         private async void opvullen()
         {
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                await DisplayAlert("no internet","","ok");
+                return;
+            }
             Debug.WriteLine("debug parking");
             ParkingGent.Rootobject x = await ParkingRepo.GetRecords();
             record = new ParkingGent.Record();
@@ -49,8 +54,12 @@ namespace eindeopdracht_dev.views
 
         private async void lvwProductions_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            
-            
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                await Navigation.PushAsync(new nointernet());
+                return;
+            }
+
             ParkingGent.Record sele = lvwParking.SelectedItem as ParkingGent.Record;
             await Navigation.PushAsync(new parkingdetails(sele));
 
@@ -85,8 +94,12 @@ namespace eindeopdracht_dev.views
             
 
 
-            List<ParkingGentFavo.Record> piemel = await ParkingRepo.Getfavoriet();
-            lvwParkingfavo.ItemsSource = piemel;
+            List<ParkingGentFavo.Record> favo = await ParkingRepo.Getfavoriet();
+            if (favo.Count != 0)
+            {
+                lvwParkingfavo.ItemsSource = favo;
+
+            }
 
 
 
