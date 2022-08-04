@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eindeopdracht_dev", "eindeo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "fa_parkinggent", "fa_parkinggent\fa_parkinggent.csproj", "{60A5F224-4550-4B68-B348-910436AEE466}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionApp1", "FunctionApp1\FunctionApp1.csproj", "{1101E5A0-9FBF-466A-97AF-A7A3DE6C091D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,10 +31,6 @@ Global
 		{60A5F224-4550-4B68-B348-910436AEE466}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60A5F224-4550-4B68-B348-910436AEE466}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60A5F224-4550-4B68-B348-910436AEE466}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1101E5A0-9FBF-466A-97AF-A7A3DE6C091D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1101E5A0-9FBF-466A-97AF-A7A3DE6C091D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1101E5A0-9FBF-466A-97AF-A7A3DE6C091D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1101E5A0-9FBF-466A-97AF-A7A3DE6C091D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
