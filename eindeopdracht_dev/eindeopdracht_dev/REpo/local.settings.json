@@ -3,6 +3,6 @@
   "Values": {
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet",
-    "Cosmosconnectionstring": "AccountEndpoint=https://gerome.documents.azure.com:443/;AccountKey=bcGHQPvHQpxeRDGqR0daFgJrAIXrQ2kKIAZZR5IxKhuelw9F74jmIqG0GkbdGxn7Rsdope2wyQMFx8DvabTfsw==;"
+    "Cosmosconnectionstring": "AccountEndpoint=https://gerome.documents.azure.com:443/;AccountKey=kwQch1FeJd8elh6noqKSKZDXyUsFjEr9dtn3XddkXUBBdLUR25SxgMMdWo0psUEjnkvWxCCV0Malbx4YHdMZpA==;"
   }
 }
