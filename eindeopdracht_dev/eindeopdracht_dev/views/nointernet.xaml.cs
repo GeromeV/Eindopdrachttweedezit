@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using eindopdracht.Models;
+using eindopdracht.REpo;
+using eindeopdracht_dev.views;
+using eindeopdracht_dev.Models;
 
 namespace eindeopdracht_dev.views
 {
