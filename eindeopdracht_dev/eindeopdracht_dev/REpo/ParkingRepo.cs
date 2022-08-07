@@ -145,7 +145,8 @@ namespace eindopdracht.REpo
         {
             try
             {
-                using (HttpClient client = GetClient())
+                using (
+                    HttpClient client = GetClient())
                 {
                     string url = "https://parkgent.azurewebsites.net/api/v1/postparkingid";
 

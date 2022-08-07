@@ -2,15 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="eindeopdracht_dev.views.nointernet">
-             
     <ContentPage.Content>
-        <Grid>
-            <Image
-            Source="\Assets\nointernet.png"
-            VerticalOptions="Center"
-            HorizontalOptions="Center"/>
-            <Label Text="No internet" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20"  FontAttributes="Bold" Grid.Column="1" />
-
-        </Grid>
+        <StackLayout>
+             <Label Text="You are not connected to the internet!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Button Text="Check connection" Clicked="Button_Clicked"/>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

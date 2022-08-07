@@ -22,13 +22,23 @@ namespace eindeopdracht_dev.views
         ParkingGentFavo.Rootobject parkfavo;
         ParkingGentFavo.Rootobject rootobject;
 
-        public parkinglijst()
+        public  parkinglijst()
         {
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                Navigation.PushModalAsync(new nointernet());
+            }
 
-            InitializeComponent();
-            opvullen();
-            imgfavo.Source = ImageSource.FromResource("eindeopdracht_dev.Assets.sterwit.png");
-            imgMapnav.Source = ImageSource.FromResource("eindeopdracht_dev.Assets.map.png");
+            else
+            {
+
+                InitializeComponent();
+                opvullen();
+                imgfavo.Source = ImageSource.FromResource("eindeopdracht_dev.Assets.sterwit.png");
+                imgMapnav.Source = ImageSource.FromResource("eindeopdracht_dev.Assets.map.png");
+
+            }
+
 
         }
 
@@ -39,10 +49,14 @@ namespace eindeopdracht_dev.views
                 await DisplayAlert("no internet","","ok");
                 return;
             }
-            Debug.WriteLine("debug parking");
-            ParkingGent.Rootobject x = await ParkingRepo.GetRecords();
-            record = new ParkingGent.Record();
-            lvwParking.ItemsSource = x.records;
+            else
+            {
+                Debug.WriteLine("debug parking");
+                ParkingGent.Rootobject x = await ParkingRepo.GetRecords();
+                record = new ParkingGent.Record();
+                lvwParking.ItemsSource = x.records;
+
+            }
            
 
             //imgpark.Source = ImageSource.FromResource("eindeopdracht_dev/Assets/reep.jpg");
@@ -56,12 +70,15 @@ namespace eindeopdracht_dev.views
         {
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
-                await Navigation.PushAsync(new nointernet());
+                await Navigation.PushModalAsync(new nointernet());
                 return;
             }
 
-            ParkingGent.Record sele = lvwParking.SelectedItem as ParkingGent.Record;
-            await Navigation.PushAsync(new parkingdetails(sele));
+            else
+            {
+                ParkingGent.Record sele = lvwParking.SelectedItem as ParkingGent.Record;
+                await Navigation.PushAsync(new parkingdetails(sele));
+            }
 
             
            
