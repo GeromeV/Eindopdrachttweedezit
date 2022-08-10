@@ -15,45 +15,39 @@ namespace eindeopdracht_dev.views
     public partial class mapfavo : ContentPage
     {
         private readonly Geocoder geocoder = new Geocoder();
-        public mapfavo(ParkingGentFavo.Record record)
+        public mapfavo(List<ParkingGentFavo.Record> record)
         {
             InitializeComponent();
             maps(record);
         }
 
-        public async void maps(ParkingGentFavo.Record record)
+        public async void maps(List<ParkingGentFavo.Record> record)
         {
 
             Map kaart = new Map();
             kaart.MapType = MapType.Street;
-            Position position = new Position(record.geometry.coordinates[1], record.geometry.coordinates[0]);
-            var addresses = await geocoder.GetAddressesForPositionAsync(position);
-
-            Pin pin = new Pin
+            foreach(var x in record)
             {
-                Label = record.fields.name,
-                Address = addresses.FirstOrDefault()?.ToString(),
-                Type = PinType.Place,
-                Position = position
-            };
-            kaart.Pins.Add(pin);
+                Position position = new Position(x.Geometry.Coordinates[1], x.Geometry.Coordinates[0]);
+                var addresses = await geocoder.GetAddressesForPositionAsync(position);
+
+                Pin pin = new Pin
+                {
+                    Label = x.Fields.Name,
+                    Address = addresses.FirstOrDefault()?.ToString(),
+                    Type = PinType.Place,
+                    Position = position
+                };
+                kaart.Pins.Add(pin);
+                Content = kaart;
+                kaart.MoveToRegion(new MapSpan(position, 0.01, 0.01));
+            }
             kaart.IsShowingUser = true;
 
 
-            //Circle circle = new Circle
-            //{
-            //    Center = position,
-            //    Radius = new Distance(250),
-            //    StrokeColor = Color.FromHex("#88FF0000"),
-            //    StrokeWidth = 8,
-            //    FillColor = Color.FromHex("#88FFC0CB")
-            //};
-            //map.MapElements.Add(circle);
-
-            //Title = "Circle demo";
-            Content = kaart;
-
-            kaart.MoveToRegion(new MapSpan(position, 0.01, 0.01));
+            
+           
+                
         }
     }
 }

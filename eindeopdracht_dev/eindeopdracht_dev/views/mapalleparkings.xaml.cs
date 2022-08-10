@@ -32,16 +32,16 @@ namespace eindeopdracht_dev.views
             Map kaart = new Map();
             kaart.MapType = MapType.Street;
             Position gent = new Position(51.0543422, 3.7174243);
-            foreach (var item in x.records)
+            foreach (var item in x.Records)
             {
-                Position position = new Position(item.geometry.coordinates[1], item.geometry.coordinates[0]);
+                Position position = new Position(item.Geometry.Coordinates[1], item.Geometry.Coordinates[0]);
                 var addresses = await geocoder.GetAddressesForPositionAsync(position);
                 
 
                 Pin pin = new Pin
                 {
                     
-                    Label = item.fields.name,
+                    Label = item.Fields.Name,
                     Address = addresses.FirstOrDefault()?.ToString(),
                     Type = PinType.Place,
                     Position = position

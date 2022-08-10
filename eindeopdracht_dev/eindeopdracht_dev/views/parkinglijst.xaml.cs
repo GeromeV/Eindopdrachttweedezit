@@ -54,7 +54,7 @@ namespace eindeopdracht_dev.views
                 Debug.WriteLine("debug parking");
                 ParkingGent.Rootobject x = await ParkingRepo.GetRecords();
                 record = new ParkingGent.Record();
-                lvwParking.ItemsSource = x.records;
+                lvwParking.ItemsSource = x.Records;
 
             }
            
@@ -84,10 +84,17 @@ namespace eindeopdracht_dev.views
            
         }
 
-        private void imgMapnav_Clicked(object sender, EventArgs e)
+        private async void imgMapnav_Clicked(object sender, EventArgs e)
         {
-            
-            Navigation.PushAsync(new mapalleparkings());
+            if(lvwParking.IsVisible == true)
+            {
+                Navigation.PushAsync(new mapalleparkings());
+            }
+            else
+            {
+                List<ParkingGentFavo.Record> favo = await ParkingRepo.Getfavoriet();
+                Navigation.PushAsync(new mapfavo(favo));
+            }
         }
 
         private async void imgfavo_Clicked(object sender, EventArgs e)

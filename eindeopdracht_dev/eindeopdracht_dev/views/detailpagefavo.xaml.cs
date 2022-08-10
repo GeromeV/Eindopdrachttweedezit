@@ -29,12 +29,12 @@ namespace eindeopdracht_dev.views
 
         private async void favorieten()
         {
-            Debug.WriteLine($"{ sele.fields.name } tekst");
+            Debug.WriteLine($"{ sele.Fields.Name} tekst");
             List<favoriet> favo = await ParkingRepo.IsFavoriet();
             foreach (var item in favo)
             {
                 Debug.WriteLine(item.parkingid);
-                if (item.parkingid != sele.fields.name)
+                if (item.parkingid != sele.Fields.Name)
                 {
                     imgfavoriet.Source = ImageSource.FromResource("eindeopdracht_dev.Assets.sterwit.png");
 
@@ -53,7 +53,7 @@ namespace eindeopdracht_dev.views
         {
             //ParkingGent.Record sele = lblcordinaten as ParkingGent.Geometry;
 
-            await Navigation.PushAsync(new mapfavo(sele));
+            await Navigation.PushAsync(new mapsfavo(sele));
         }
 
         private async void imgfavoriet_Clicked(object sender, EventArgs e)
@@ -67,10 +67,10 @@ namespace eindeopdracht_dev.views
             {
                 Debug.WriteLine(item.parkingid);
 
-                if (item.parkingid == sele.fields.name)
+                if (item.parkingid == sele.Fields.Name)
                 {
 
-                    await ParkingRepo.Deletefavo(sele.fields.name);
+                    await ParkingRepo.Deletefavo(sele.Fields.Name);
                     imgfavoriet.Source = ImageSource.FromResource("eindeopdracht_dev.Assets.sterwit.png");
                     break;
 
@@ -78,7 +78,7 @@ namespace eindeopdracht_dev.views
 
                 else
                 {
-                    item.parkingid = sele.fields.name;
+                    item.parkingid = sele.Fields.Name;
                     await ParkingRepo.UpdateFavo(item);
                     imgfavoriet.Source = ImageSource.FromResource("eindeopdracht_dev.Assets.stergeel.png");
 

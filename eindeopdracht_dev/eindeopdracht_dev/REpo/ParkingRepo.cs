@@ -95,7 +95,7 @@ namespace eindopdracht.REpo
                         foreach (var item in JsonConvert.DeserializeObject<List<favoriet>>(json))
                         {
                             var test = await Getrecordsfavo(item.parkingid);
-                            lijst.Add(test.records[0]);
+                            lijst.Add(test.Records[0]);
                         }
 
                         return lijst;

@@ -39,18 +39,18 @@
                                             <RowDefinition Height=".75*" />
                                         </Grid.RowDefinitions>
                                         <!--<Image Source="{Binding }" Grid.RowSpan="3" Aspect="AspectFill" />-->
-                                        <Label  x:Name="lblnaam" Text="{Binding fields.name}" Grid.Row="1" FontSize="Medium" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#BB000000" TextColor="White" />
-                                        <Image Source="{Binding fields.ImageSource}" Grid.Row="2" Aspect="AspectFill" HorizontalOptions="Fill"></Image>
+                                        <Label  x:Name="lblnaam" Text="{Binding Fields.Name}" Grid.Row="1" FontSize="Medium" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#BB000000" TextColor="White" />
+                                        <Image Source="{Binding Fields.ImageSource}" Grid.Row="2" Aspect="AspectFill" HorizontalOptions="Fill"></Image>
 
                                     </Grid>
                                 </Frame>
-                                <Frame BackgroundColor="{Binding fields.kleur}" Padding="4" Margin="4,24" VerticalOptions="End" HorizontalOptions="End" >
+                                <Frame BackgroundColor="{Binding Fields.Kleur}" Padding="4" Margin="4,24" VerticalOptions="End" HorizontalOptions="End" >
                                     <Label  TextColor="White">
                                         <Label.FormattedText>
                                             <FormattedString>
-                                                <Span Text="{Binding fields.availablecapacity}" />
+                                                <Span Text="{Binding Fields.Availablecapacity}" />
                                                 <Span Text=" / " />
-                                                <Span Text="{Binding fields.totalcapacity}" />
+                                                <Span Text="{Binding Fields.Totalcapacity}" />
                                             </FormattedString>
                                         </Label.FormattedText>
                                     </Label>
@@ -75,18 +75,18 @@
                                             <RowDefinition Height=".75*" />
                                         </Grid.RowDefinitions>
                                         <!--<Image Source="{Binding }" Grid.RowSpan="3" Aspect="AspectFill" />-->
-                                        <Label  x:Name="lblnaam" Text="{Binding fields.name}" Grid.Row="1" FontSize="Medium" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#BB000000" TextColor="White" />
-                                        <Image Source="{Binding fields.ImageSource}" Grid.Row="2" Aspect="AspectFill" HorizontalOptions="Fill"> </Image>
+                                        <Label  x:Name="lblnaam" Text="{Binding Fields.Name }" Grid.Row="1" FontSize="Medium" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#BB000000" TextColor="White" />
+                                        <Image Source="{Binding Fields.ImageSource}" Grid.Row="2" Aspect="AspectFill" HorizontalOptions="Fill"> </Image>
                                        
                                     </Grid>
                                 </Frame>
-                                <Frame BackgroundColor="{Binding fields.kleur}" Padding="4" Margin="4,24" VerticalOptions="End" HorizontalOptions="End" >
+                                <Frame BackgroundColor="{Binding Fields.Kleur}" Padding="4" Margin="4,24" VerticalOptions="End" HorizontalOptions="End" >
                                     <Label  TextColor="White">
                                         <Label.FormattedText>
                                             <FormattedString>
-                                                <Span Text="{Binding fields.availablecapacity}" />
+                                                <Span Text="{Binding Fields.Availablecapacity}" />
                                                 <Span Text=" / " />
-                                                <Span Text="{Binding fields.totalcapacity}" />
+                                                <Span Text="{Binding Fields.Totalcapacity}" />
                                             </FormattedString>
                                         </Label.FormattedText>
                                     </Label>

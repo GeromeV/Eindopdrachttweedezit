@@ -2,51 +2,89 @@
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
-
+using Newtonsoft.Json;
 namespace eindopdracht.Models
 {
     public class ParkingGent
     {
-        public Rootobject[] rootobjects { get; set; }
         public class Rootobject
         {
-            public Record[] records { get; set; }
+            [JsonProperty("records")]
+            public Record[] Records { get; set; }
         }
 
         public class Record
         {
-            public string datasetid { get; set; }
-            public string recordid { get; set; }
-            public Fields fields { get; set; }
-            public Geometry geometry { get; set; }
-            public DateTime record_timestamp { get; set; }
+            [JsonProperty("datasetid")]
+            public string Datasetid { get; set; }
+            [JsonProperty("recordid")]
+            public string Recordid { get; set; }
+            [JsonProperty("fields")]
+            public Fields Fields { get; set; }
+            [JsonProperty("geometry")]
+            public Geometry Geometry { get; set; }
+            [JsonProperty("record_timestamp")]
+            public DateTime Record_timestamp { get; set; }
         }
 
         public class Fields
         {
-            public DateTime lastupdate { get; set; }
-            public string description { get; set; }
-            public int occupation { get; set; }
-            public string operatorinformation { get; set; }
-            public float[] location { get; set; }
-            public string occupancytrend { get; set; }
-            public string urllinkaddress { get; set; }
-            public int isopennow { get; set; }
-            public double availablecapacity { get; set; }
-            public int freeparking { get; set; }
-            public int temporaryclosed { get; set; }
-            public string openingtimesdescription { get; set; }
-            public double totalcapacity { get; set; }
-            public string type { get; set; }
-            public string id { get; set; }
-            public string name { get; set; }
-            public string kleur
+            [JsonProperty("lastupdate")]
+            public DateTime Lastupdate { get; set; }
+
+            [JsonProperty("description")]
+            public string Description { get; set; }
+
+            [JsonProperty("occupation")]
+            public int Occupation { get; set; }
+
+            [JsonProperty("operatorinformation")]
+            public string Operatorinformation { get; set; }
+
+            [JsonProperty("location")]
+            public float[] Location { get; set; }
+
+            [JsonProperty("occupancytrend")]
+            public string Occupancytrend { get; set; }
+
+            [JsonProperty("urllinkaddress")]
+            public string Urllinkaddress { get; set; }
+
+            [JsonProperty("isopennow")]
+            public int Isopennow { get; set; }
+
+            [JsonProperty("availablecapacity")]
+            public double Availablecapacity { get; set; }
+
+            [JsonProperty("freeparking")]
+            public int Freeparking { get; set; }
+
+            [JsonProperty("temporaryclosed")]
+            public int Temporaryclosed { get; set; }
+
+            [JsonProperty("openingtimesdescription")]
+            public string Openingtimesdescription { get; set; }
+
+            [JsonProperty("totalcapacity")]
+            public double Totalcapacity { get; set; }
+
+            [JsonProperty("type")]
+            public string Type { get; set; }
+
+            [JsonProperty("id")]
+            public string Id { get; set; }
+
+            [JsonProperty("name")]
+            public string Name { get; set; }
+
+            [JsonProperty("kleur")]
+            public string Kleur
             {
                 get
                 {
 
                     double procent;
-                    procent = availablecapacity / totalcapacity * 100;
+                    procent = Availablecapacity / Totalcapacity * 100;
                     if (procent > 60)
                     {
                         return "green";
@@ -63,11 +101,11 @@ namespace eindopdracht.Models
                 }
             }
 
-            public string foto
+            public string Foto
             {
                 get
                 {
-                    return $"eindopdracht_dev/Assets/{name}.jpg";
+                    return $"eindopdracht_dev/Assets/{Name}.jpg";
                 }
             }
             public ImageSource ImageSource
@@ -76,7 +114,7 @@ namespace eindopdracht.Models
                 {
                     
                     
-                  return ImageSource.FromResource($"eindeopdracht_dev.Assets.{this.name.ToLower()}.png");
+                  return ImageSource.FromResource($"eindeopdracht_dev.Assets.{this.Name.ToLower()}.png");
                     
                     
                                            
@@ -87,7 +125,7 @@ namespace eindopdracht.Models
             {
                 get
                 {
-                    if(isopennow == 1)
+                    if(Isopennow == 1)
                     {
                         return "De parking is geopend";
                     }
@@ -98,8 +136,10 @@ namespace eindopdracht.Models
 
         public class Geometry
         {
-            public string type { get; set; }
-            public float[] coordinates { get; set; }
+            [JsonProperty("type")]
+            public string Type { get; set; }
+            [JsonProperty("coordinates")]
+            public float[] Coordinates { get; set; }
         }
 
        

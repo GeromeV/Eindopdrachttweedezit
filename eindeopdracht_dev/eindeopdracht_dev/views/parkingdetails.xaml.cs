@@ -33,14 +33,14 @@ namespace eindeopdracht_dev.views
 
         private async void favorieten()
         {
-            Debug.WriteLine($"{ records.fields.name } tekst");
+            Debug.WriteLine($"{ records.Fields.Name} tekst");
             List<favoriet> favo = await ParkingRepo.IsFavoriet();
             if (favo.Count != 0)
             {
                 foreach (var item in favo)
                 {
                     Debug.WriteLine(item.parkingid);
-                    if (item.parkingid != records.fields.name)
+                    if (item.parkingid != records.Fields.Name)
                     {
                         imgfavoriet.Source = ImageSource.FromResource("eindeopdracht_dev.Assets.sterwit.png");
 
@@ -82,10 +82,10 @@ namespace eindeopdracht_dev.views
                 {
                     Debug.WriteLine(item.parkingid);
 
-                    if (item.parkingid == records.fields.name)
+                    if (item.parkingid == records.Fields.Name)
                     {
 
-                        await ParkingRepo.Deletefavo(records.fields.name);
+                        await ParkingRepo.Deletefavo(records.Fields.Name);
                         imgfavoriet.Source = ImageSource.FromResource("eindeopdracht_dev.Assets.sterwit.png");
                         break;
 
@@ -93,7 +93,7 @@ namespace eindeopdracht_dev.views
 
                     else
                     {
-                        item.parkingid = records.fields.name;
+                        item.parkingid = records.Fields.Name;
                         await ParkingRepo.UpdateFavo(item);
                         imgfavoriet.Source = ImageSource.FromResource("eindeopdracht_dev.Assets.stergeel.png");
 
@@ -106,7 +106,7 @@ namespace eindeopdracht_dev.views
             else
             {
                 
-                 favor.parkingid = records.fields.name;
+                 favor.parkingid = records.Fields.Name;
                  await ParkingRepo.UpdateFavo(favor);
                  imgfavoriet.Source = ImageSource.FromResource("eindeopdracht_dev.Assets.stergeel.png");
                 
