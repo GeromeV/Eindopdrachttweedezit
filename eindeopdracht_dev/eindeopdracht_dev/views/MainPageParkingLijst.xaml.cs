@@ -88,12 +88,12 @@ namespace eindeopdracht_dev.views
         {
             if(lvwParking.IsVisible == true)
             {
-                Navigation.PushAsync(new mapalleparkings());
+                await Navigation.PushAsync(new mapalleparkings());
             }
             else
             {
                 List<ParkingGentFavo.Record> favo = await ParkingRepo.Getfavoriet();
-                Navigation.PushAsync(new mapfavo(favo));
+                await Navigation.PushAsync(new mapfavo(favo));
             }
         }
 
@@ -131,8 +131,16 @@ namespace eindeopdracht_dev.views
 
         private async void lvwParkingfavo_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            ParkingGentFavo.Record sele = lvwParkingfavo.SelectedItem as ParkingGentFavo.Record;
-            await Navigation.PushAsync(new detailpagefavo(sele));
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                await Navigation.PushModalAsync(new nointernet());
+                return;
+            }
+            else
+            {
+                ParkingGentFavo.Record sele = lvwParkingfavo.SelectedItem as ParkingGentFavo.Record;
+                await Navigation.PushAsync(new detailpagefavo(sele));
+            }
         }
     }
 }

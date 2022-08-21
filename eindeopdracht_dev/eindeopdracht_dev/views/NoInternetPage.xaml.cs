@@ -25,14 +25,15 @@ namespace eindeopdracht_dev.views
         {
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
-                await DisplayAlert("no internet", "", "ok");
+                await DisplayAlert("Still not connected internet", "", "ok");
                 return;
             }
 
             else
             {
+                Application.Current.MainPage = this;
                 await Navigation.PushAsync(new parkinglijst());
-
+                
             }
         }
     }

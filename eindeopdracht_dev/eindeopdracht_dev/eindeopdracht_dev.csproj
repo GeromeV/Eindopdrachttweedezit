@@ -81,28 +81,49 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="views\detailpagefavo.xaml">
+    <Compile Update="views\DetailPageFavoParking.xaml.cs">
+      <DependentUpon>DetailPageFavoParking.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="views\DetailPageMapParking.xaml.cs">
+      <DependentUpon>DetailPageMapParking.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="views\DetailPageAlleParkingsMap.xaml.cs">
+      <DependentUpon>DetailPageAlleParkingsMap.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="views\DetailPageAlleFavoParkingsMap.xaml.cs">
+      <DependentUpon>DetailPageAlleFavoParkingsMap.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="views\NoInternetPage.xaml.cs">
+      <DependentUpon>NoInternetPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="views\DetailPageParkingDetails.xaml.cs">
+      <DependentUpon>DetailPageParkingDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="views\MainPageParkingLijst.xaml.cs">
+      <DependentUpon>MainPageParkingLijst.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="views\DetailPageFavoParking.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="views\map.xaml">
+    <EmbeddedResource Update="views\DetailPageMapParking.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="views\mapalleparkings.xaml">
+    <EmbeddedResource Update="views\DetailPageAlleParkingsMap.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="views\mapfavo.xaml">
+    <EmbeddedResource Update="views\DetailPageAlleFavoParkingsMap.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="views\mapsfavo.xaml">
+    <EmbeddedResource Update="views\NoInternetPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="views\nointernet.xaml">
+    <EmbeddedResource Update="views\DetailPageParkingDetails.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="views\parkingdetails.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="views\parkinglijst.xaml">
+    <EmbeddedResource Update="views\MainPageParkingLijst.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
